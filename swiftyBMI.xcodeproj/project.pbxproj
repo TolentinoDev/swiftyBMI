@@ -61,9 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				6E6E47D1245B027B00F669D7 /* AppDelegate.swift */,
+				6E6E47D3245B027B00F669D7 /* SceneDelegate.swift */,
 				6E73E224245F8E6C00C319B2 /* Model */,
-				6E73E223245F8E4A00C319B2 /* Controller */,
 				6E73E225245F8ECD00C319B2 /* View */,
+				6E73E223245F8E4A00C319B2 /* Controller */,
 				6E6E47DA245B027D00F669D7 /* Assets.xcassets */,
 				6E6E47DC245B027D00F669D7 /* LaunchScreen.storyboard */,
 				6E6E47DF245B027D00F669D7 /* Info.plist */,
@@ -83,7 +84,6 @@
 		6E73E224245F8E6C00C319B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6E6E47D3245B027B00F669D7 /* SceneDelegate.swift */,
 				6E73E22A2460C38C00C319B2 /* CalculatorBrain.swift */,
 			);
 			path = Model;
