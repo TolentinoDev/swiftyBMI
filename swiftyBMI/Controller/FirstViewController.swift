@@ -8,6 +8,8 @@
 
 import UIKit
 
+var bmiValue = "0.0"
+
 class FirstViewController: UIViewController {
 
     @IBOutlet weak var heightSlider: UISlider!
@@ -35,11 +37,18 @@ class FirstViewController: UIViewController {
     @IBAction func calculatePressed(_ sender: UIButton) {
         let height = (heightSlider.value)
         let weight = (weightSlider.value)
-        let BMI = weight/( height * height)
-        print(BMI)
-        
-        
+        let bmi = weight/( height * height)
+        bmiValue = String(format: "%.1f", bmi)
+        print(bmiValue)
+        self.performSegue(withIdentifier: "goToResult", sender: self)
     }
     
-}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "goToResult"{
+                let destinationVC = segue.destination as! ResultViewController
+                destinationVC.resultbmiValue = bmiValue
+            }
+            
+        }
+    }
 

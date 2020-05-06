@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="swiftyBMI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="swiftyBMI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="66" minValue="48" maxValue="84" translatesAutoresizingMaskIntoConstraints="NO" id="0Xp-Qf-jgk">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.5" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="0Xp-Qf-jgk">
                                         <rect key="frame" x="-2" y="606" width="418" height="51"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="7Hx-jk-at8"/>
@@ -79,7 +79,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="189.5" minValue="75" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="xB5-hJ-kgL">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="150" minValue="0.0" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="xB5-hJ-kgL">
                                         <rect key="frame" x="-2" y="697" width="418" height="61"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="bG6-LZ-6cn"/>
@@ -119,26 +119,83 @@
                         <outlet property="heightSlider" destination="0Xp-Qf-jgk" id="lnd-zx-v0w"/>
                         <outlet property="weightLabel" destination="7qk-MM-h5k" id="WUI-Vh-GVr"/>
                         <outlet property="weightSlider" destination="xB5-hJ-kgL" id="kJW-3g-vNd"/>
+                        <segue destination="6W2-Nz-YG3" kind="presentation" identifier="goToResult" id="vc0-Or-fx9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="wB8-WZ-zlK">
             <objects>
-                <viewController id="6W2-Nz-YG3" sceneMemberID="viewController">
+                <viewController id="6W2-Nz-YG3" customClass="ResultViewController" customModule="swiftyBMI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oPA-IC-7g6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VVN-Kj-D0e">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Your Results " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5b-Sj-K91">
+                                        <rect key="frame" x="51" y="0.0" width="312.5" height="370"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fy6-8d-cpW">
+                                        <rect key="frame" x="169" y="380" width="76" height="48"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="42"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are obesse" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTp-I7-Yyh">
+                                        <rect key="frame" x="81" y="438" width="252.5" height="309"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVJ-M8-w79">
+                                        <rect key="frame" x="107.5" y="757" width="199" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51" id="Q38-SW-rNQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
+                                        <state key="normal" title="Recalculate">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="heavy"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="say-so-jIq"/>
+                                            <action selector="recalculate:" destination="6W2-Nz-YG3" eventType="touchUpInside" id="UDO-zo-pDl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Fy6-8d-cpW" firstAttribute="centerX" secondItem="VVN-Kj-D0e" secondAttribute="centerX" id="GFf-zI-taE"/>
+                                    <constraint firstItem="Fy6-8d-cpW" firstAttribute="centerY" secondItem="VVN-Kj-D0e" secondAttribute="centerY" id="VmO-N4-RhC"/>
+                                    <constraint firstItem="Fy6-8d-cpW" firstAttribute="top" secondItem="W5b-Sj-K91" secondAttribute="bottom" constant="10" id="foy-OL-O9A"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21176470589999999" green="0.30980392159999998" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VVN-Kj-D0e" firstAttribute="centerX" secondItem="oPA-IC-7g6" secondAttribute="centerX" id="26v-Eg-PO1"/>
+                            <constraint firstItem="VVN-Kj-D0e" firstAttribute="top" secondItem="jW5-ak-oRT" secondAttribute="top" id="VJG-2k-5qD"/>
+                            <constraint firstItem="VVN-Kj-D0e" firstAttribute="leading" secondItem="jW5-ak-oRT" secondAttribute="leading" id="rpy-G1-Qgv"/>
+                            <constraint firstItem="jW5-ak-oRT" firstAttribute="trailing" secondItem="VVN-Kj-D0e" secondAttribute="trailing" id="yMK-El-xMG"/>
+                            <constraint firstItem="jW5-ak-oRT" firstAttribute="bottom" secondItem="VVN-Kj-D0e" secondAttribute="bottom" id="yTF-GD-fb4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jW5-ak-oRT"/>
                     </view>
+                    <connections>
+                        <outlet property="bmiLabel" destination="Fy6-8d-cpW" id="fgR-eU-cIa"/>
+                        <outlet property="bmiSuggestion" destination="ZTp-I7-Yyh" id="eBE-rX-EdY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7iC-3B-2pM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="139"/>
+            <point key="canvasLocation" x="940.57971014492762" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>
